@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="652.0" style="-fx-background-color: skyblue;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parcial1progra2.HelloController">
+
+    <children>
+      <RadioButton fx:id="boton2" layoutX="14.0" layoutY="372.0" mnemonicParsing="false" onAction="#initi" text="Mujer">
+         <tooltip>
+            <Tooltip fx:id="cosito1" text="Soy lo que quiero ser" textAlignment="CENTER">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
+      </RadioButton>
+      <RadioButton fx:id="boton1" layoutX="14.0" layoutY="344.0" mnemonicParsing="false" onAction="#initi" text="Hombre">
+         <tooltip>
+            <Tooltip fx:id="cosito2" text="uga uga" textAlignment="CENTER">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
+      </RadioButton>
+      <Label layoutX="170.0" layoutY="44.0" prefHeight="17.0" prefWidth="150.0" text="Clientes" />
+
+        <DatePicker layoutX="456.0" layoutY="40.0" promptText="Selecciona la fecha" />
+        <TreeView fx:id="nolose" editable="true" layoutX="14.0" layoutY="121.0" prefHeight="187.0" prefWidth="205.0" />
+
+        <Slider fx:id="barrita" layoutX="456.0" layoutY="94.0" />
+        <TableView fx:id="tablac" layoutX="463.0" layoutY="121.0" onSort="#info" prefHeight="187.0" prefWidth="175.0">
+        <columns>
+          <TableColumn fx:id="mot" editable="false" prefWidth="75.0" text="Productos" />
+          <TableColumn fx:id="per" editable="false" prefWidth="75.0" text="Precios" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <CheckBox fx:id="checks" layoutX="259.0" layoutY="101.0" mnemonicParsing="false" onAction="#intializa0" text="Borrar infromacion" />
+
+            <ComboBox fx:id="listado2" layoutX="170.0" layoutY="60.0" prefWidth="150.0">
+       <items>
+           <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Brook Paz" />
+               <String fx:value="Luis Fernando" />
+               <String fx:value="Emanuel Asuncion" />
+           </FXCollections>
+       </items>
+       </ComboBox>
+      <ChoiceBox fx:id="listado1" layoutX="14.0" layoutY="60.0" prefWidth="150.0">
+       <items>
+           <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Gordon Freeman" />
+               <String fx:value="Adrian Shephard" />
+               <String fx:value="Eli Vance" />
+           </FXCollections>
+       </items>
+      </ChoiceBox>
+      <TextArea fx:id="cuadro" editable="false" layoutX="223.0" layoutY="121.0" prefHeight="187.0" prefWidth="233.0" text="Bienvenido, te recibimos&#10;con esta frase.&#10;Hay cosas que no se pueden &#10;arreglar. No existen las &#10;herramientas... no hay piezas &#10;de repuesto. Son cosas que &#10;necesitan tiempo... y aún así, &#10;nunca quedan igual.">
+         <font>
+            <Font size="15.0" />
+
+         </font>
+      </TextArea>
+      <Label layoutX="14.0" layoutY="44.0" prefHeight="17.0" prefWidth="150.0" text="Listado de trabajadores" />
+      <MenuBar style="-fx-background-color: wheat;">
+        <menus>
+          <Menu mnemonicParsing="false" text="File" />
+                <Menu text="Archivo">
+                    <MenuItem fx:id="nuevv" onAction="#Nuevo" text="Nuevo" />
+                    <MenuItem fx:id="abb" onAction="#Abrir" text="Abrir" />
+                    <MenuItem fx:id="gua" onAction="#Guardar" text="Guardar" />
+                    <MenuItem fx:id="salirr" onAction="#Salir" text="Salir" />
+                </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+
+        <Label fx:id="label2" layoutX="231.0" layoutY="327.0" prefHeight="17.0" prefWidth="91.0" text="Etiqueta Nueva" visible="false" />
+      <Label fx:id="label3" layoutX="231.0" layoutY="352.0" prefHeight="17.0" prefWidth="91.0" text="Etiqueta Abierta" visible="false" />
+      <Label fx:id="label4" layoutX="231.0" layoutY="380.0" prefHeight="17.0" prefWidth="104.0" text="Etiqueta Guardada" visible="false" />
+      <Label fx:id="label5" layoutX="231.0" layoutY="410.0" prefHeight="17.0" prefWidth="91.0" text="Etiqueta Fuera" visible="false" />
+      <Button fx:id="salidd" layoutX="432.0" layoutY="348.0" mnemonicParsing="false" onAction="#alerta" text="Salida" />
+        <ProgressBar fx:id="funfun" layoutX="374.0" layoutY="327.0" prefHeight="18.0" prefWidth="164.0" progress="0.0" />
+    </children>
+</AnchorPane>
